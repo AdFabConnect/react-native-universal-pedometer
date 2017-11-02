@@ -9,7 +9,6 @@
 #import "BMDPedometer.h"
 #import <CoreMotion/CoreMotion.h>
 #import <React/RCTLog.h>
-#import <React/RCTEventDispatcher.h>
 
 #define NullErr [NSNull null]
 

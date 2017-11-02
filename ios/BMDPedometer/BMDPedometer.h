@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <React/RCTBridge.h>
+#import <CoreMotion/CoreMotion.h>
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
 
 @interface BMDPedometer : NSObject<RCTBridgeModule>
-
+@property (nonatomic, readonly) CMPedometer *pedometer;
 @end
