@@ -1,12 +1,10 @@
-'use strict';
+import React from 'react';
+import {
+  DeviceEventEmitter,
+  NativeModules
+} from 'react-native';
 
-var React = require('react-native');
-
-var {
-    DeviceEventEmitter
-} = React;
-
-var RNPedometer = React.NativeModules.BMDPedometer;
+var RNPedometer = NativeModules.BMDPedometer;
 
 var Pedometer = {
   isStepCountingAvailable: function(callback) {
