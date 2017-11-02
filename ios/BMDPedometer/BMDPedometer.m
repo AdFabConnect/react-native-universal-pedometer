@@ -12,10 +12,6 @@
 
 #define NullErr [NSNull null]
 
-@interface BMDPedometer ()
-@property (nonatomic, readonly) CMPedometer *pedometer;
-@end
-
 @implementation BMDPedometer
 
 @synthesize bridge = _bridge;
