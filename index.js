@@ -1,9 +1,6 @@
-import {
-  DeviceEventEmitter,
-  NativeModules
-} from 'react-native';
-
-var RNPedometer = NativeModules.BMDPedometer;
+var ReactNative = require('react-native');
+var DeviceEventEmitter = ReactNative.DeviceEventEmitter;
+var RNPedometer = ReactNative.NativeModules.BMDPedometer;
 
 var Pedometer = {
 
