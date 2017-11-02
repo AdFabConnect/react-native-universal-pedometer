@@ -8,8 +8,8 @@
 
 #import "BMDPedometer.h"
 #import <CoreMotion/CoreMotion.h>
-#import "RCTBridge.h"
-#import "RCTEventDispatcher.h"
+#import <React/RCTLog.h>
+#import <React/RCTEventDispatcher.h>
 
 #define NullErr [NSNull null]
 
