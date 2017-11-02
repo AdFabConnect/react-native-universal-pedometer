@@ -14,9 +14,11 @@
 
 @implementation BMDPedometer
 
-@synthesize bridge = _bridge;
-
 RCT_EXPORT_MODULE()
+
+- (NSArray<NSString *> *)supportedEvents {
+  return @[@"pedometerDataDidUpdate"];
+}
 
 RCT_EXPORT_METHOD(isStepCountingAvailable:(RCTResponseSenderBlock) callback) {
     callback(@[NullErr, @([CMPedometer isStepCountingAvailable])]);
@@ -50,7 +52,7 @@ RCT_EXPORT_METHOD(startPedometerUpdatesFromDate:(NSDate *)date) {
     [self.pedometer startPedometerUpdatesFromDate:date?:[NSDate date]
                                       withHandler:^(CMPedometerData *pedometerData, NSError *error) {
                                           if (pedometerData) {
-                                              [[self.bridge eventDispatcher] sendDeviceEventWithName:@"pedometerDataDidUpdate" body:[self dictionaryFromPedometerData:pedometerData]];
+                                              [self sendEventWithName:@"pedometerDataDidUpdate" body:[self dictionaryFromPedometerData:pedometerData]];
                                           }
                                       }];
 }
